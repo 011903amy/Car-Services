@@ -1,0 +1,90 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.services {
+  &__wrapper {
+    h2 {
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+  &__features {
+    &--details {
+      // @include unevenGrid(1fr 1fr 1fr, 2rem);
+      @include evenGrid(3,2rem);
+    }
+    &--cards {
+      a {
+        font-size: 0.8rem;
+        color: $clr--secondary;
+        &:hover {
+          color: rgba($color: #000000, $alpha: 1);
+          transition: 0.5;
+        }
+      }
+      img {
+        padding-bottom: 1rem;
+        width: 30rem;
+        height: 10rem;
+        object-fit: cover;
+      }
+      p {
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+  p {
+    max-width: 27rem;
+
+    &__nav{
+
+    }
+  }
+}
+.priceReport {
+  h2 {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: $clr--dark;
+  }
+
+  &__wrapper {
+    h2 {
+      font-weight: 400;
+    }
+  }
+  &__features {
+    @include unevenGrid(1fr 1.7fr, 2rem);
+    &--cards {
+      p {
+        padding-top: 1rem;
+        color: $clr--dark;
+      }
+      a {
+        // color: $clr--secondary;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+        &:hover {
+          color: $clr--dark;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+  &__file {
+    p {
+      color: $clr--dark;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 0.5rem;
+      &:hover {
+        color: $clr--secondary;
+      }
+    }
+  }
+  &__list {
+    @include unevenGrid(1fr 1fr 1fr, 1rem);
+    li {
+      line-height: 2rem;
+    }
+  }
+}
