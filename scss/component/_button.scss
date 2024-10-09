@@ -1,0 +1,38 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.btn {
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+
+  &.bg--secondary {
+    @extend .btn;
+    display: inline-block;
+    margin-top: 49px;
+    text-decoration: none;
+    font-family: $font--primary;
+    color: $clr--light;
+    background-color: $clr--secondary;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    font-weight: 550;
+
+    &:hover {
+      background-color: $clr--light;
+      // border: 1px solid $clr--secondary;
+      color: $clr--dark;
+      transition: 0.4s ease;
+      font-weight: 550;
+    }
+
+    &.bg--text {
+      text-decoration: none;
+      font-family: $font--primary;
+      color: $clr--light;
+      background-color: $clr--secondary;
+      
+    }
+  }
+}

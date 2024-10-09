@@ -1,0 +1,203 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+// AboutPage
+.aboutPage {
+  @include mediaQuery(520px) {
+    .container {
+      padding: 0rem;
+    }
+  }
+  &__wrapper {
+    h2 {
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+  &__features {
+    padding-top: 2rem 0;
+
+    &--card {
+      padding: 5rem;
+      @include mediaQuery(520px) {
+        padding: 0rem;
+      }
+    }
+    &--details {
+      @include mediaQuery(520px) {
+        @include evenGrid(1, 1rem);
+        padding: 3.1rem;
+      }
+
+      @include unevenGrid(1fr 1fr 1fr 1fr, 1rem);
+    }
+    &--cards {
+      text-align: center;
+      @include mediaQuery(520) {
+        text-align: center;
+      }
+    }
+    h1 {
+      font-size: 1.5rem;
+      @include mediaQuery(520px) {
+        padding-bottom: 2rem;
+      }
+    }
+    p {
+      font-family: $font--primary;
+      padding-bottom: 4rem;
+      @include mediaQuery(520px) {
+        max-width: 20rem;
+        padding-bottom: 0rem;
+        // text-align: left;
+        max-width: 30rem;
+      }
+    }
+  }
+}
+// HISTORY
+.history {
+  @include mediaQuery(520px) {
+    .container {
+      padding: 0rem;
+    }
+  }
+  &__wrapper {
+  }
+  &__features {
+    h2 {
+      // border-color: rgba(0,0,0, 0.5);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &--details {
+      @include unevenGrid(2fr 1fr, 1rem);
+      @include mediaQuery(520px) {
+        @include evenGrid(1, 1rem);
+      }
+    }
+
+    &--cards {
+      a {
+        color: rgba(255, 255, 255, 0.5);
+        &:hover {
+          color: $clr--dark;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}
+// OUR TEAM
+.ourTeam {
+  @include mediaQuery(520px) {
+    .container {
+      padding: 0rem;
+    }
+  }
+  &__wrapper {
+    h2 {
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__features {
+    h2 {
+      color: $clr--dark;
+    }
+
+    p {
+      color: $clr--dark;
+      padding-top: 0.5rem;
+    }
+    h3 {
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+      color: $clr--secondary;
+      font-family: $font--tertiary;
+      font-weight: 200;
+      font-size: 0.9rem;
+    }
+    img {
+      width: 20rem;
+      padding-bottom: 2rem;
+      @include mediaQuery(520px) {
+        width: 15rem;
+        padding-bottom: 0rem;
+      }
+    }
+    &--details {
+      @include unevenGrid(1fr 1fr 1fr 1fr, 1rem);
+      @include mediaQuery(520px) {
+        @include evenGrid(1, 1rem);
+      }
+    }
+    &--cards {
+      a {
+        @include mediaQuery(520px) {
+          padding-top: 1rem;
+        }
+        padding-top: 4rem;
+        color: $clr--secondary;
+        &:hover {
+          color: $clr--dark;
+          transition: 0.4s;
+        }
+      }
+    }
+    &--files {
+      p {
+        color: $clr--secondary;
+        &:hover {
+          color: $clr--dark;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}
+// Footer
+.footer {
+  &__wrapper {
+    @include evenGrid(3, 3rem);
+  }
+  &__social {
+    justify-content: center;
+    text-align: center;
+    p {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      color: rgba(163, 159, 159, 0.7);
+    }
+    i {
+      margin-left: 1rem;
+      padding: 1rem;
+      color: $clr--light;
+      border: 2px solid $clr--light;
+      border-radius: 50%;
+
+      &:hover {
+        border: 2px solid $clr--secondary;
+        background-color: $clr--secondary;
+      }
+    }
+    a {
+      color: rgba(163, 159, 159, 0.7);
+
+      &:hover {
+        color: $clr--secondary;
+      }
+    }
+  }
+  &__contact {
+    gap: 3rem;
+
+    p {
+      color: rgba(163, 159, 159, 0.7);
+    }
+  }
+  &__map {
+    iframe {
+      height: 15rem;
+    }
+  }
+}
