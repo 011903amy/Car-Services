@@ -2,89 +2,249 @@
 @use "../base/" as *;
 
 .services {
-  &__wrapper {
-    h2 {
-      border-color: rgba(0, 0, 0, 0.15);
+  @include mediaQuery(520px) {
+    .container {
+      padding: 0rem;
     }
   }
-  &__features {
+  &__wrapper {
+    h2 {
+      // border-color: rgba(0,0,0, 0.5);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+  &__nav {
+    right: 0rem;
+    top: -6rem;
+  }
+  &__card {
+    display: flex;
     &--details {
-      // @include unevenGrid(1fr 1fr 1fr, 2rem);
-      @include evenGrid(3,2rem);
-    }
-    &--cards {
-      a {
-        font-size: 0.8rem;
+      h3 {
+        font-size: 1rem;
         color: $clr--secondary;
-        &:hover {
-          color: rgba($color: #000000, $alpha: 1);
-          transition: 0.5;
-        }
-      }
-      img {
-        padding-bottom: 1rem;
-        width: 30rem;
-        height: 10rem;
-        object-fit: cover;
-      }
-      p {
-        padding-top: 0.5rem;
-        padding-bottom: 1rem;
-      }
-    }
-  }
-  p {
-    max-width: 27rem;
-
-    &__nav{
-
-    }
-  }
-}
-.priceReport {
-  h2 {
-    border-color: rgba(0, 0, 0, 0.15);
-    color: $clr--dark;
-  }
-
-  &__wrapper {
-    h2 {
-      font-weight: 400;
-    }
-  }
-  &__features {
-    @include unevenGrid(1fr 1.7fr, 2rem);
-    &--cards {
-      p {
-        padding-top: 1rem;
-        color: $clr--dark;
-      }
-      a {
-        // color: $clr--secondary;
-        padding-bottom: 0.6rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-
+        font-size: 0.9rem;
+        font-weight: 200;
         &:hover {
           color: $clr--dark;
           transition: 0.4s;
         }
       }
+
+      img {
+        padding-bottom: 2rem;
+        max-width: 25.5rem;
+        height: 14rem;
+        object-fit: cover;
+      }
+    }
+    &--content {
+      display: flex;
+      flex-direction: row;
+      gap: 0.2rem;
+      padding-bottom: 2rem;
+
+      a {
+        color: $clr--light;
+        text-decoration: underline;
+        &:hover {
+          color: $clr--secondary;
+        }
+      }
+      p {
+        padding-top: 0.5rem;
+        font-size: 1rem;
+        width: 22rem;
+      }
     }
   }
-  &__file {
-    p {
+}
+.Price {
+  @include mediaQuery(520px) {
+    margin: 0rem;
+    .container {
+      padding: 0rem;
+    }
+  }
+  padding-bottom: 2rem;
+  h2 {
+    font-weight: 200;
+    color: $clr--dark;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  &__left {
+    h2::after {
+      display: inline-block;
+      // position: relative;
+      content: " ";
+      width: 23rem;
+      top: -2rem;
+      opacity: 0.3;
+      height: 1px;
+      background-color: #89888c;
+    }
+    a {
+      @include mediaQuery(520px) {
+        width: 26rem;
+        font-size: 1rem;
+      }
+      padding-bottom: 1.5rem;
+      font-size: 13px;
+      color: $clr--secondary;
+      font-family: $font--primary;
+      display: block;
+      line-height: 1rem;
+      &::after {
+        display: inline-block;
+        // position: relative;
+        content: " ";
+        width: 23rem;
+        top: 0.7rem;
+        height: 1px;
+        opacity: 0.3;
+        background-color: #89888c;
+      }
+
+      &:hover {
+        color: $clr--dark;
+      }
+    }
+    em {
+      background: url(/img/ellipsis.png) repeat-x 0% 13px;
+      display: block;
+      overflow: hidden;
+    }
+  }
+  &__right {
+    h2::after {
+      display: inline-block;
+      // position: relative;
+      content: " ";
+      width: 49.5rem;
+      top: -2rem;
+      height: 1px;
+      opacity: 0.3;
+      background-color: #89888c;
+    }
+    a {
+      margin-top: 0.8rem;
+      font-size: 13px;
       color: $clr--dark;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      padding-bottom: 0.5rem;
+      font-family: $font--primary;
+      display: block;
+      line-height: 1rem;
+
+      &:hover {
+        color: $clr--secondary;
+      }
+    }
+    p {
+      width: 50rem;
+      text-align: justify;
+      @include mediaQuery(520px) {
+        width: 26rem;
+      }
+    }
+  }
+
+  p {
+    font-size: 15px;
+    color: $clr--dark;
+    @include mediaQuery(520px) {
+      width: 26rem;
+    }
+  }
+  &__wrapper {
+    padding: 6rem 7rem;
+    background-color: $clr--light;
+    @include unevenGrid(1fr 2fr, 2rem);
+
+    @include mediaQuery(520px) {
+      @include unevenGrid(1fr, 1rem);
+      padding: 1rem;
+    }
+  }
+  &__lists {
+    @include mediaQuery(520px) {
+      @include unevenGrid(1fr, 1rem);
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+    }
+
+    margin-right: 5rem;
+    display: flex;
+    gap: 5rem;
+    color: $clr--dark;
+    em {
+      background: url(/img/ellipsis.png) repeat-x 0% 13px;
+      display: block;
+      overflow: hidden;
+    }
+    a {
+      @include mediaQuery(520px) {
+        width: 250%;
+      }
+      font-size: 15px;
+      width: 12.8rem;
+      float: left;
+      font-family: $clr--secondary;
       &:hover {
         color: $clr--secondary;
       }
     }
   }
-  &__list {
-    @include unevenGrid(1fr 1fr 1fr, 1rem);
-    li {
-      line-height: 2rem;
+  &__col {
+    margin-top: 1rem;
+    ul li {
+      padding-bottom: 1.5rem;
+    }
+  }
+}
+
+.footer {
+  &__wrapper {
+    @include evenGrid(3, 3rem);
+  }
+  &__social {
+    justify-content: center;
+    text-align: center;
+    p {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      color: rgba(163, 159, 159, 0.7);
+    }
+    i {
+      margin-left: 1rem;
+      padding: 1rem;
+      color: $clr--light;
+      border: 2px solid $clr--light;
+      border-radius: 50%;
+
+      &:hover {
+        border: 2px solid $clr--secondary;
+        background-color: $clr--secondary;
+      }
+    }
+    a {
+      color: rgba(163, 159, 159, 0.7);
+
+      &:hover {
+        color: $clr--secondary;
+      }
+    }
+  }
+  &__contact {
+    gap: 3rem;
+
+    p {
+      color: rgba(163, 159, 159, 0.7);
+    }
+  }
+  &__map {
+    iframe {
+      height: 15rem;
     }
   }
 }
