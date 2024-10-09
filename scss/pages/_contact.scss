@@ -1,0 +1,97 @@
+@use "../base/" as *;
+@use "../abstract/" as *;
+
+.contact{
+     @include mediaQuery (520px){
+            display: flex;
+            flex-direction: column;
+
+           .container{
+            padding: 0;
+           }
+           
+        }
+
+    &__wrapper{
+        @include evenGrid(2, 4rem);
+
+        @include mediaQuery (520px){
+            display: flex;
+            flex-direction: column;
+            padding: -2rem;
+        }
+    }
+    &__find{
+        h2{
+            font-weight: 1;
+            font-family: $font--secondary;
+            font-size: 3rem;
+            color: $clr--dark;
+            border-bottom: 2px solid rgba(0,0,0,0.2);
+        }
+        p{
+            color: $clr--dark;
+        }
+
+        &--red{
+            p{
+                color: $clr--secondary;
+                 border-bottom: 2px solid rgba(0,0,0,0.2)
+            }
+            
+
+            &:hover{
+                p{
+                    color: $clr--dark;
+                }
+                
+            }
+        }
+    }
+    &__message{
+        
+        h2{
+            
+            font-weight: 1;
+            font-family: $font--secondary;
+            font-size: 3rem;
+            color: $clr--dark;
+              border-bottom: 2px solid rgba(0,0,0,0.2);
+        }
+       form{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        input{
+            padding: 1rem;
+           height: 3rem;
+            border: 2px solid  rgba(0,0,0,0.2);
+
+            &:focus{
+                
+               box-shadow: rgba(235, 23, 23, 0.24) 0px 3px 8px;
+            
+            }
+        }
+        textarea{
+             padding: 1rem;
+            border: 2px solid  rgba(0,0,0,0.2);
+            height: 20rem;
+             &:focus{
+                
+               box-shadow: rgba(235, 23, 23, 0.24) 0px 3px 8px;
+            
+            }
+        }
+       
+     
+       }
+      
+}
+&__button{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 3rem;
+}
+}

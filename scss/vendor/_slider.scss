@@ -1,0 +1,66 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.headerBanner .tns-outer {
+  & > button {
+    display: none;
+  }
+}
+.headerBanner .tns-nav {
+  @include centerAll;
+  position: absolute;
+  top: 50%;
+  right: 33%;
+  text-align: center;
+  button {
+    margin: 2rem 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: none;
+    background-color: $clr--dark;
+  }
+  &-active {
+    background-color: $clr--light !important;
+  }
+  @include mediaQuery(520px){
+    top: 32%;
+    right: 2%;
+   
+  }
+}
+
+.homeContent .tns-outer{
+    & > button {
+    display: none;
+}
+}
+
+.homeContent .tns-nav {
+  display: none;
+ text-align: center;
+ button{
+    margin: 2rem 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    
+ }
+}
+
+#controls{
+  position: absolute;
+}
+
+.prev{
+  color:$clr--light;
+  font-size: 2rem;
+  position: relative;
+
+  &:hover{
+    color: $clr--dark;
+  }
+}
+.next{
+  @extend .prev;
+}
